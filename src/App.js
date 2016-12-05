@@ -1,7 +1,7 @@
 import './App.css';
 
 import React, { Component } from 'react';
-import { BrowserRouter, Match, Miss, Redirect, Link } from 'react-router';
+import { BrowserRouter, Match, Link } from 'react-router';
 import styled from 'styled-components'
 
 
