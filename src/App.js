@@ -14,6 +14,21 @@ P.defaultProps = {
   color: 'green'
 }
 
+
+const StyledInnerP = styled.p`
+  margin-bottom: 25px;
+  color: ${props => props.color};
+`
+
+const InnerP = props => (
+  <StyledInnerP {...props} />
+)
+
+InnerP.defaultProps = {
+  color: 'green'
+}
+
+
 const Inner1 = ({text}) => (
   <h3>inner1 - {text}</h3>
 )
@@ -57,6 +72,7 @@ class App extends Component {
       <div className="App">
         <P>This should be green (by default props)</P>
         <P color='red'>This should be red</P>
+        <InnerP>This should be green (by default props)</InnerP>
 
         <p>
           <Link to='/'>page1</Link> - <Link to='/page2'>page2</Link>
