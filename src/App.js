@@ -14,9 +14,39 @@ P.defaultProps = {
   color: 'green'
 }
 
+const Inner1 = <h3>inner1</h3>
+const Inner2 = <h3>inner1</h3>
 
-const Page1 = () => <h1>Page 1</h1>
-const Page2 = () => <h1>Page 2</h1>
+
+const Page1 = () => (
+  <div>
+    <h1>Page1</h1>
+
+    <p>
+      <Link to='/page1/inner1'>inner1</Link> - <Link to='/page1/inner2'>inner2</Link>
+    </p>
+
+    <div>
+      <Match pattern="/page1/inner1" component={Inner1} />
+      <Match pattern="/page1/inner2" component={Inner2} />
+    </div>
+  </div>
+)
+
+const Page2 = () => (
+  <div>
+    <h1>Page2</h1>
+
+    <p>
+      <Link to='/page2/inner1'>inner1</Link> - <Link to='/page2/inner2'>inner2</Link>
+    </p>
+
+    <div>
+      <Match pattern="/page2/inner1" component={Inner1} />
+      <Match pattern="/page2/inner2" component={Inner2} />
+    </div>
+  </div>
+)
 
 
 class App extends Component {
@@ -31,14 +61,13 @@ class App extends Component {
         </p>
 
         <div>
-          <Match pattern="/" exactly component={Page1} />
+          <Match pattern="/"      component={Page1} />
           <Match pattern="/page2" component={Page2} />
         </div>
       </div>
     );
   }
 }
-
 
 
 export default () => (

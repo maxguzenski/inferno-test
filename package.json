@@ -47,8 +47,8 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
-    "inferno": "beta25",
-    "inferno-compat": "beta25",
+    "inferno": "beta32",
+    "inferno-compat": "beta32",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "next",
